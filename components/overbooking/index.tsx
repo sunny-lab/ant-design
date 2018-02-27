@@ -2,7 +2,7 @@ import get from 'lodash.get';
 import * as React from 'react';
 import Process from './process';
 
-import converter from "yan-converter";
+import converter from 'yan-converter';
 
 interface OverbookingProps {
   dataSource: object
@@ -31,7 +31,18 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
   constructor(props: OverbookingProps) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      physicalTotal: 0,
+      physicalUsed: 0,
+      virtualTotal: 0,
+      virtualUsed: 0,
+      physicalPercent: 0,
+      virtualPercent: 0,
+      physicalWidth: 0,
+      virtualWidth: 0,
+      overbooking: '0',
+      unit: '',
+    };
 
     if (props.dataSource) {
       this.refresh(props);
@@ -121,8 +132,6 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
 
 
   render() {
-    console.log(this.state);
-
     const {
       physicalTotal,
       physicalUsed,

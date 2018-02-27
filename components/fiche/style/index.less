@@ -1,0 +1,63 @@
+@import "../../style/themes/default";
+
+.yr-card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid @BORDER_COLOR;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+
+  .yr-card-title {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    color: @TEXT_PRIMARY_COLOR;
+    padding: 20px;
+  }
+
+  .yr-card-extra {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .yr-card-content {
+    padding: 0 20px 40px 20px;
+  }
+
+  .yr-card-bottom {
+    color: @TEXT_PRIMARY_COLOR;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    border-top: 1px solid @BORDER_COLOR;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 12px;
+
+    a {
+      color: @TEXT_PRIMARY_COLOR;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.lite {
+    border: none;
+    box-shadow: none;
+
+    .yr-card-title {
+      padding-bottom: 10px;
+    }
+
+    .yr-card-content {
+      padding: 0 20px 0 20px;
+    }
+  }
+}
