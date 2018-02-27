@@ -122,3 +122,5 @@ export { default as Upload } from './upload';
 export { default as version } from './version';
 
 export { default as GMenu } from './gmenu';
+
+export { default as Overbooking } from './overbooking';

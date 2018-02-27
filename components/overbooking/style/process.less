@@ -1,0 +1,28 @@
+@import "../../style/themes/default";
+@import "../../style/mixins/index";
+
+.yr-process {
+
+  .process-total {
+    height: 8px;
+    width: 200px;
+    background-color: @OVERBOOKING_COLOR;
+    border: 1px solid @OVERBOOKING_BORDER_COLOR;
+    position: relative;
+
+    .process-used {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      height: 8px;
+      width: 100px;
+      background-color: @OVERBOOKING_PRIMARY_COLOR;
+      border: 1px solid @OVERBOOKING_PRIMARY_BORDER_COLOR;
+    }
+  }
+
+  .process-words {
+    font-size: 12px;
+    color: @TEXT_PRIMARY_COLOR;
+  }
+}

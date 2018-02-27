@@ -33,7 +33,7 @@ class Sider extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClick.bind(this)}>
+        <Button onClick={ this.handleClick.bind(this) }>
           { this.state.visible ? '关闭' : '弹出' }全局菜单
         </Button>
         <GMenu top={0}
