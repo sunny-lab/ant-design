@@ -31,6 +31,7 @@ subtitle: 全局导航菜单
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| top | 距离浏览器顶部的距离，单位px | number | 48 |
 | visible | 菜单显示与隐藏 | boolean | false |
 | onClose | 关闭菜单时调用 | function() |  |
 
