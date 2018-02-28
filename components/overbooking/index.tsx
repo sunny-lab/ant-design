@@ -2,7 +2,7 @@ import get from 'lodash.get';
 import * as React from 'react';
 import Process from './process';
 
-import converter from 'yan-converter';
+const converter = require('yan-converter');
 
 export interface OverbookingProps {
   dataSource: object
