@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {SiderProps} from './Sider';
+import Icon from "../icon";
 
 export interface BasicProps {
   style?: React.CSSProperties;
@@ -84,9 +85,9 @@ const Header = generator({
   prefixCls: 'ant-layout-header',
 })(Basic);
 
-const SubHeader = generator({
-  prefixCls: 'ant-layout-header ant-layout-sub-header'
-})(Basic);
+// const SubHeader = generator({
+//   prefixCls: 'ant-layout-header ant-layout-sub-header'
+// })(Basic);
 
 const Footer = generator({
   prefixCls: 'ant-layout-footer',
@@ -96,6 +97,54 @@ const Content = generator({
   prefixCls: 'ant-layout-content',
 })(Basic);
 
+export interface SubHeaderProps extends BasicProps {
+  onBack: () => {},
+  title: React.ReactNode
+}
+
+class SubHeader extends React.Component<SubHeaderProps> {
+  render() {
+    const onBack = this.props.onBack;
+
+    return <Header className="ant-layout-sub-header">
+      {onBack && <span className="header-back">
+        <Icon type="verticle-right"/>
+      </span>}
+      <h3 className="header-title">{this.props.title}</h3>
+      <div className="header-right">
+        {this.props.children}
+      </div>
+    </Header>
+  }
+}
+
+class HeaderLeft extends React.Component<BasicProps> {
+  render() {
+    return <div className="header-left">
+      {this.props.children}
+    </div>
+  }
+}
+
+class HeaderCenter extends React.Component<BasicProps> {
+  render() {
+    return <div className="header-center">
+      {this.props.children}
+    </div>
+  }
+}
+
+class HeaderRight extends React.Component<BasicProps> {
+  render() {
+    return <div className="header-right">
+      {this.props.children}
+    </div>
+  }
+}
+
+Header.Left = HeaderLeft;
+Header.Right = HeaderRight;
+Header.Center = HeaderCenter;
 Layout.Header = Header;
 Layout.SubHeader = SubHeader;
 Layout.Footer = Footer;

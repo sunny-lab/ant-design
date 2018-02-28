@@ -82,6 +82,15 @@ title: Layout
 
 > `Layout.Header` `Layout.Footer` `Layout.Content` API 与 `Layout` 相同
 
+### Layout.SubHeader
+
+子 header。
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 标题 | string|ReactNode | - |
+| onBack | 返回按钮回掉，若为null，则不显示 | function() | - |
+
 ### Layout.Sider
 
 侧边栏。

@@ -14,50 +14,47 @@ title:
 
 
 ````jsx
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 const { Header, SubHeader, Content, Footer, Sider } = Layout;
 
 ReactDOM.render(
   <Layout className="layout">
     <Header>
-      <div className="logo" />
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '48px' }}
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+      <Header.Left>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={['2']}
+          style={{ lineHeight: '48px' }}
+        >
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+        </Menu>
+      </Header.Left>
+      <Header.Center>
+        <span style={{ color: 'rgba(255, 255, 255, 0.65)' }}>Logo</span>
+      </Header.Center>
+      <Header.Right>
+        <span style={{ color: 'rgba(255, 255, 255, 0.65)' }}>Admin</span>
+      </Header.Right>
     </Header>
     <Layout>
-         <SubHeader>
-            Sub header
-         </SubHeader>
-         <Layout style={{ height: 300 }}>
-            <Sider>
-                Sider
-            </Sider>
-            <Content>
-                Content
-            </Content>
-         </Layout>
+      <SubHeader title="Sub header" onBack={() => {}}>
+        Sub header content.
+      </SubHeader>
+      <Layout style={{ height: 300 }}>
+        <Sider>
+          Sider
+        </Sider>
+        <Content>
+          Content
+        </Content>
+      </Layout>
     </Layout>
     <Footer style={{ textAlign: 'center' }}>
       Ant Design ©2016 Created by Ant UED
     </Footer>
   </Layout>
 , mountNode);
-````
-
-````css
-#components-layout-demo-top .logo {
-  width: 120px;
-  height: 28px;
-  background: rgba(255,255,255,.2);
-  margin: 10px 28px 10px 0;
-  float: left;
-}
 ````
