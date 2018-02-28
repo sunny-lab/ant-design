@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SiderProps } from './Sider';
+import {SiderProps} from './Sider';
 
 export interface BasicProps {
   style?: React.CSSProperties;
@@ -17,8 +17,9 @@ function generator(props: BasicProps) {
       static Footer: any;
       static Content: any;
       static Sider: any;
+
       render() {
-        const { prefixCls } = props;
+        const {prefixCls} = props;
         return <BasicComponent prefixCls={prefixCls} {...this.props} />;
       }
     };
@@ -27,7 +28,7 @@ function generator(props: BasicProps) {
 
 class Basic extends React.Component<BasicProps, any> {
   render() {
-    const { prefixCls, className, children, ...others } = this.props;
+    const {prefixCls, className, children, ...others} = this.props;
     const divCls = classNames(className, prefixCls);
     return (
       <div className={divCls} {...others}>{children}</div>
@@ -39,7 +40,7 @@ class BasicLayout extends React.Component<BasicProps, any> {
   static childContextTypes = {
     siderHook: PropTypes.object,
   };
-  state = { siders: [] };
+  state = {siders: []};
 
   getChildContext() {
     return {
@@ -59,7 +60,7 @@ class BasicLayout extends React.Component<BasicProps, any> {
   }
 
   render() {
-    const { prefixCls, className, children, hasSider, ...others } = this.props;
+    const {prefixCls, className, children, hasSider, ...others} = this.props;
     const divCls = classNames(className, prefixCls, {
       [`${prefixCls}-has-sider`]: hasSider || this.state.siders.length > 0,
     });
@@ -71,6 +72,7 @@ class BasicLayout extends React.Component<BasicProps, any> {
 
 const Layout: React.ComponentClass<BasicProps> & {
   Header: React.ComponentClass<BasicProps>;
+  SubHeader: React.ComponentClass<BasicProps>;
   Footer: React.ComponentClass<BasicProps>;
   Content: React.ComponentClass<BasicProps>;
   Sider: React.ComponentClass<SiderProps>;
@@ -82,6 +84,10 @@ const Header = generator({
   prefixCls: 'ant-layout-header',
 })(Basic);
 
+const SubHeader = generator({
+  prefixCls: 'ant-layout-header ant-layout-sub-header'
+})(Basic);
+
 const Footer = generator({
   prefixCls: 'ant-layout-footer',
 })(Basic);
@@ -91,6 +97,7 @@ const Content = generator({
 })(Basic);
 
 Layout.Header = Header;
+Layout.SubHeader = SubHeader;
 Layout.Footer = Footer;
 Layout.Content = Content;
 

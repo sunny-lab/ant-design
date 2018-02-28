@@ -34,6 +34,13 @@
     line-height: @layout-header-height;
   }
 
+  &-sub-header {
+    background: @layout-body-background;
+    height: @layout-sub-header-height;
+    line-height: @layout-sub-header-height;
+    border-bottom: 1px solid @layout-sub-header-border;
+  }
+
   &-footer {
     background: @layout-footer-background;
     padding: @layout-footer-padding;
@@ -49,9 +56,10 @@
     transition: all .2s;
     position: relative;
     background: @layout-sider-background;
-
-    /* fix firefox can't set width smaller than content on flex item */
-    min-width: 0;
+    border-right: 1px solid @layout-sider-border;
+    width: @layout-sider-width;
+    min-width: @layout-sider-width;
+    max-width: @layout-sider-width;
 
     &-children {
       height: 100%;

@@ -32,20 +32,20 @@ ReactDOM.render(
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
+        style={{ lineHeight: '48px' }}
       >
         <Menu.Item key="1">nav 1</Menu.Item>
         <Menu.Item key="2">nav 2</Menu.Item>
         <Menu.Item key="3">nav 3</Menu.Item>
       </Menu>
     </Header>
-    <Content style={{ padding: '0 50px' }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
+    <Content>
+      <Breadcrumb style={{ margin: '16px 0', padding: '0 20px' }}>
         <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item>
       </Breadcrumb>
-      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+      <div style={{ background: '#fff', padding: 20, minHeight: 280 }}>Content</div>
     </Content>
     <Footer style={{ textAlign: 'center' }}>
       Ant Design ©2016 Created by Ant UED
@@ -57,9 +57,9 @@ ReactDOM.render(
 ````css
 #components-layout-demo-top .logo {
   width: 120px;
-  height: 31px;
-  background: rgba(255,255,255,.2);  
-  margin: 16px 24px 16px 0;
+  height: 28px;
+  background: rgba(255,255,255,.2);
+  margin: 10px 28px 10px 0;
   float: left;
 }
 ````
