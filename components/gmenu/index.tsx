@@ -3,13 +3,13 @@ import MenuGroup from './group';
 import MenuItem from './item';
 import Divider from './divider';
 
-interface MenuProps {
+export interface MenuProps {
   visible: boolean;
   top: number;
   onClose?: (e: React.MouseEvent<any>) => void;
 }
 
-interface MenuState {
+export interface MenuState {
   lockAnimation: boolean;
 }
 

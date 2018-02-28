@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface GroupProps {
+export interface GroupProps {
   title: string;
 }
 

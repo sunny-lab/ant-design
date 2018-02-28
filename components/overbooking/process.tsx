@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface ProcessProps {
+export interface ProcessProps {
   wordPosition: string;
   width: string;
   processRef: (el: any) => {};

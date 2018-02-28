@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface FicheProps {
+export interface FicheProps {
   type: string;
   title: React.ReactNode;
   extra: React.ReactNode;

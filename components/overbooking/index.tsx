@@ -4,11 +4,11 @@ import Process from './process';
 
 import converter from 'yan-converter';
 
-interface OverbookingProps {
+export interface OverbookingProps {
   dataSource: object
 }
 
-interface OverbookingState {
+export interface OverbookingState {
   physicalTotal: number;
   physicalUsed: number;
   virtualTotal: number;
