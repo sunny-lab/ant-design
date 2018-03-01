@@ -128,3 +128,5 @@ export { default as Overbooking } from './overbooking';
 export { default as Fiche } from './fiche';
 
 export { default as Indicator } from './indicator';
+
+export { default as Toolbar } from './toolbar';
