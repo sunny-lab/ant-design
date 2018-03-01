@@ -16,33 +16,27 @@ title:
 import React from 'react';
 import { Panel, Button } from 'antd';
 
-function onChange(checked) {
-  console.log(`switch to ${checked}`);
-}
-
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
-    }
+      visible: false,
+    };
   }
-  
+
   handleClick() {
-    this.setState({visible: true});
+    this.setState({ visible: true });
   }
-  
-  componentDidMount() {
-    
-  }
-  
+
   render() {
-    return <div style={{height: 200, overflow: 'auto'}} id="container">
-      <Button onClick={this.handleClick.bind(this)}>打开面板</Button>
-      <div style={{height: 200}}></div>
-      {this.state.visible && <Panel scrollEl="container" title="标题" description="描述">测试内容</Panel>}
-      <div style={{height: 200}}></div>
-    </div>
+    return (
+      <div style={{ height: 200, overflow: 'auto' }} id="container">
+        <Button onClick={this.handleClick}>打开面板</Button>
+        <div style={{ height: 200 }} />
+        {this.state.visible && <Panel scrollEl="container" title="标题" description="描述">测试内容</Panel>}
+        <div style={{ height: 200 }} />
+      </div>
+    );
   }
 }
 

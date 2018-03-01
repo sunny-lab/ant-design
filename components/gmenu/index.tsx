@@ -19,7 +19,7 @@ export default class Menu extends React.Component<MenuProps, MenuState> {
   static Divider = Divider;
 
   static defaultProps = {
-    top: 48
+    top: 48,
   };
 
   private lockAnimation: boolean = true;
@@ -34,15 +34,30 @@ export default class Menu extends React.Component<MenuProps, MenuState> {
     }
   }
 
+  getClassName() {
+    let className = 'menu-layer animated';
+    if (this.props.visible) {
+      className += ' fadeInLeft';
+    } else {
+      className += this.lockAnimation ? ' hide' : ' fadeOutLeft';
+    }
+
+    return className;
+  }
+
   render() {
     return <div className="yr-menu">
-      <div className="bg-layer"
-           style={{display: this.props.visible ? 'block' : 'none'}}
-           onClick={e => this.props.onClose && this.props.onClose(e)}/>
-      <div className={`menu-layer animated ${this.props.visible ? 'fadeInLeft' :
-        this.lockAnimation ? 'hide' : 'fadeOutLeft'}`} style={{top: this.props.top}}>
+      <div
+        className="bg-layer"
+        style={{ display: this.props.visible ? 'block' : 'none' }}
+        onClick={e => this.props.onClose && this.props.onClose(e)}
+      />
+      <div
+        className={this.getClassName()}
+        style={{ top: this.props.top }}
+      >
         {this.props.children}
       </div>
-    </div>
+    </div>;
   }
 }

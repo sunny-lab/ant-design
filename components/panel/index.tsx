@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import {scrollToTarget} from './scroller';
+import { scrollToTarget } from './scroller';
 
 export interface PanelProps {
   scrollEl: HTMLElement;
@@ -30,13 +30,14 @@ export default class Panel extends React.Component<PanelProps> {
   }
 
   render() {
-    const {props} = this;
-    return <div className={classNames(props.className, props.prefixCls, {
-      [`${props.prefixCls}-bordered`]: props.bordered
-    })} ref={el => this.targetEl = el}>
+    const { props } = this;
+    const className = classNames(props.className, props.prefixCls, {
+      [`${props.prefixCls}-bordered`]: props.bordered,
+    });
+    return <div className={className} ref={el => this.targetEl = el}>
       {props.title && <div className={`${props.prefixCls}-title`}>{props.title}</div>}
       {props.description && <div className={`${props.prefixCls}-description`}>描述：{props.description}</div>}
       <div className={`${props.prefixCls}-content`}>{this.props.children}</div>
-    </div>
+    </div>;
   }
 }

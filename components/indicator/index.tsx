@@ -19,32 +19,34 @@ export interface IndicatorItemProps {
 export default class Indicator extends React.Component<IndicatorProps> {
   static Item = class IndicatorItem extends React.Component<IndicatorItemProps> {
     static defaultProps = {
-      prefixCls: 'ant-indicator'
+      prefixCls: 'ant-indicator',
     };
 
     render() {
-      const {props} = this;
+      const { props } = this;
 
-      return <span className={classNames(props.className, `${props.prefixCls}-item`, {
+      const className = classNames(props.className, `${props.prefixCls}-item`, {
         [`${props.prefixCls}-item-success`]: props.status === 'success',
         [`${props.prefixCls}-item-exception`]: props.status === 'exception',
         [`${props.prefixCls}-item-active`]: props.status === 'active',
-      })}/>
+      });
+
+      return <span className={className} />;
     }
   };
 
   static defaultProps = {
     prefixCls: 'ant-indicator',
-    type: 'square'
+    type: 'square',
   };
 
   static propTypes = {
     type: PropTypes.string,
-    place: PropTypes.string
+    place: PropTypes.string,
   };
 
   render() {
-    const {props} = this;
+    const { props } = this;
 
     const className = classNames(props.className, props.prefixCls, {
       [`${props.prefixCls}-vertical`]: props.place === 'vertical',
@@ -54,9 +56,8 @@ export default class Indicator extends React.Component<IndicatorProps> {
       [`${props.prefixCls}-rect`]: props.type === 'rect',
     });
 
-
     return <span className={className}>
       {this.props.children}
-    </span>
+    </span>;
   }
 }

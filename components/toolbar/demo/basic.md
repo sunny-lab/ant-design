@@ -20,12 +20,12 @@ const dataSource = [{
   key: '1',
   name: '胡彦斌',
   age: 32,
-  address: '西湖区湖底公园1号'
+  address: '西湖区湖底公园1号',
 }, {
   key: '2',
   name: '胡彦祖',
   age: 42,
-  address: '西湖区湖底公园1号'
+  address: '西湖区湖底公园1号',
 }];
 
 const columns = [{
@@ -42,11 +42,13 @@ const columns = [{
   key: 'address',
 }];
 
-ReactDOM.render(<div>
-  <Toolbar title="用户列表">
-    <Button type="primary">创建</Button>
-    <Button>删除</Button>
-  </Toolbar>
-  <Table dataSource={dataSource} columns={columns} />
-</div>, mountNode);
+ReactDOM.render(
+  <div>
+    <Toolbar title="用户列表">
+      <Button type="primary">创建</Button>
+      <Button>删除</Button>
+    </Toolbar>
+    <Table dataSource={dataSource} columns={columns} />
+  </div>,
+  mountNode);
 ````

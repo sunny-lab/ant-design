@@ -47,13 +47,11 @@
       padding: 0;
       > .@{table-prefix-cls}-thead > tr > th {
         padding: @table-header-padding-vertical/2 @table-header-padding-horizontal/2;
+        background: @table-header-bg;
+        border-bottom: @border-width-base @border-style-base @border-color-split;
       }
       > .@{table-prefix-cls}-tbody > tr > td {
         padding: @table-padding-vertical/2 @table-padding-horizontal/2;
-      }
-      > .@{table-prefix-cls}-thead > tr > th {
-        background: @table-header-bg;
-        border-bottom: @border-width-base @border-style-base @border-color-split;
       }
     }
 

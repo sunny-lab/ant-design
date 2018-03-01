@@ -13,11 +13,5 @@ title:
 ````jsx
 import { Fiche } from 'antd';
 
-class Sider extends React.Component {
-  render() {
-    return <Fiche type="lite" title="标题">测试内容</Fiche>
-  }
-}
-
-ReactDOM.render(<Sider />, mountNode);
+ReactDOM.render(<Fiche type="lite" title="标题">测试内容</Fiche>, mountNode);
 ````

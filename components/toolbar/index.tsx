@@ -9,14 +9,14 @@ export interface ToolbarProps {
 
 export default class Toolbar extends React.Component<ToolbarProps> {
   static defaultProps = {
-    prefixCls: 'ant-toolbar'
+    prefixCls: 'ant-toolbar',
   };
 
   render() {
-    const {props} = this;
+    const { props } = this;
     return <div className={classNames(props.className, props.prefixCls)}>
       <div className={`${props.prefixCls}-title`}>{props.title}</div>
       {props.children}
-    </div>
+    </div>;
   }
 }

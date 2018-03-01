@@ -1,8 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {SiderProps} from './Sider';
-import Icon from "../icon";
+import { SiderProps } from './Sider';
+import Icon from '../icon';
 
 export interface BasicProps {
   style?: React.CSSProperties;
@@ -20,7 +20,7 @@ function generator(props: BasicProps) {
       static Sider: any;
 
       render() {
-        const {prefixCls} = props;
+        const { prefixCls } = props;
         return <BasicComponent prefixCls={prefixCls} {...this.props} />;
       }
     };
@@ -29,7 +29,7 @@ function generator(props: BasicProps) {
 
 class Basic extends React.Component<BasicProps, any> {
   render() {
-    const {prefixCls, className, children, ...others} = this.props;
+    const { prefixCls, className, children, ...others } = this.props;
     const divCls = classNames(className, prefixCls);
     return (
       <div className={divCls} {...others}>{children}</div>
@@ -41,7 +41,7 @@ class BasicLayout extends React.Component<BasicProps, any> {
   static childContextTypes = {
     siderHook: PropTypes.object,
   };
-  state = {siders: []};
+  state = { siders: [] };
 
   getChildContext() {
     return {
@@ -61,7 +61,7 @@ class BasicLayout extends React.Component<BasicProps, any> {
   }
 
   render() {
-    const {prefixCls, className, children, hasSider, ...others} = this.props;
+    const { prefixCls, className, children, hasSider, ...others } = this.props;
     const divCls = classNames(className, prefixCls, {
       [`${prefixCls}-has-sider`]: hasSider || this.state.siders.length > 0,
     });
@@ -98,8 +98,8 @@ const Content = generator({
 })(Basic);
 
 export interface SubHeaderProps extends BasicProps {
-  onBack: () => {},
-  title: React.ReactNode
+  onBack: () => {};
+  title: React.ReactNode;
 }
 
 class SubHeader extends React.Component<SubHeaderProps> {
@@ -107,14 +107,12 @@ class SubHeader extends React.Component<SubHeaderProps> {
     const onBack = this.props.onBack;
 
     return <Header className="ant-layout-sub-header">
-      {onBack && <span className="header-back">
-        <Icon type="verticle-right"/>
-      </span>}
+      {onBack && <span className="header-back"><Icon type="verticle-right"/></span>}
       <h3 className="header-title">{this.props.title}</h3>
       <div className="header-right">
         {this.props.children}
       </div>
-    </Header>
+    </Header>;
   }
 }
 
@@ -122,7 +120,7 @@ class HeaderLeft extends React.Component<BasicProps> {
   render() {
     return <div className="header-left">
       {this.props.children}
-    </div>
+    </div>;
   }
 }
 
@@ -130,7 +128,7 @@ class HeaderCenter extends React.Component<BasicProps> {
   render() {
     return <div className="header-center">
       {this.props.children}
-    </div>
+    </div>;
   }
 }
 
@@ -138,7 +136,7 @@ class HeaderRight extends React.Component<BasicProps> {
   render() {
     return <div className="header-right">
       {this.props.children}
-    </div>
+    </div>;
   }
 }
 

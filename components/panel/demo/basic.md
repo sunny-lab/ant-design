@@ -15,24 +15,10 @@ The most basic usage.
 
 ````jsx
 import React from 'react';
-import { Panel, Button } from 'antd';
-
-function onChange(checked) {
-  console.log(`switch to ${checked}`);
-}
-
-class Container extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
-    return <Panel title="标题" description="描述">测试内容</Panel>
-  }
-}
+import { Panel } from 'antd';
 
 ReactDOM.render(
-  <Container />,
+  <Panel title="标题" description="描述">测试内容</Panel>,
   mountNode
 );
 ````

@@ -23,15 +23,17 @@ class Sider extends React.Component {
         used: 22,
         quota: 60,
         allocated: 30,
-        unit: 'GB'
-      }
-    }
+        unit: 'GB',
+      },
+    };
   }
-  
+
   render() {
-    return <div>
-      <Overbooking dataSource={this.state.data}/>
-    </div>
+    return (
+      <div>
+        <Overbooking dataSource={this.state.data} />
+      </div>
+    );
   }
 }
 

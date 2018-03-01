@@ -14,7 +14,7 @@ export function scrollToTarget(scrollEl: any, targetEl: any, time: number = 500)
     const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
     let targetScroll = targetOffsetTop - scrollOffsetTop;
     if (targetScroll > maxScroll) {
-      targetScroll = maxScroll
+      targetScroll = maxScroll;
     }
 
     let TWEEN: any = null;
@@ -24,8 +24,8 @@ export function scrollToTarget(scrollEl: any, targetEl: any, time: number = 500)
     }
 
     if (TWEEN) {
-      new TWEEN.Tween({scroll: scrollEl.scrollTop || 0})
-        .to({scroll: targetScroll}, time)
+      new TWEEN.Tween({ scroll: scrollEl.scrollTop || 0 })
+        .to({ scroll: targetScroll }, time)
         .repeat(false)
         .delay(0)
         .onUpdate((params: any) => scrollEl.scrollTop = params.scroll)
@@ -52,7 +52,5 @@ function startAnimation(TWEEN: any) {
 
     animation = window.requestAnimationFrame(animate);
     TWEEN.update(time);
-  }
+  };
 }
-
-

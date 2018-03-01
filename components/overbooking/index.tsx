@@ -5,7 +5,7 @@ import Process from './process';
 const converter = require('yan-converter');
 
 export interface OverbookingProps {
-  dataSource: object
+  dataSource: object;
 }
 
 export interface OverbookingState {
@@ -84,10 +84,10 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
     }
 
     if (physicalPercent > 100) {
-      physicalPercent = 100
+      physicalPercent = 100;
     }
     if (virtualPercent > 100) {
-      virtualPercent = 100
+      virtualPercent = 100;
     }
 
     this.setState({
@@ -100,12 +100,12 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
       physicalWidth,
       virtualWidth,
       overbooking,
-      unit
+      unit,
     });
   }
 
   componentDidMount() {
-    this.contentEl = document.getElementById("yr-overbooking");
+    this.contentEl = document.getElementById('yr-overbooking');
     this.listener = () => {
       if (this.timerId) {
         clearTimeout(this.timerId);
@@ -124,14 +124,27 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
 
   getOverbookingStyle(degree: number, triangleWidth: number) {
     if (degree >= 90 || degree <= -90) {
-      return {transform: `rotate(0deg)`, right: '10px', top: '6px'}
+      return { transform: `rotate(0deg)`, right: '10px', top: '6px' };
     } else {
-      return {transform: `rotate(${degree}deg)`, right: triangleWidth / 2 - 36};
+      return { transform: `rotate(${degree}deg)`, right: triangleWidth / 2 - 36 };
     }
   }
 
-
   render() {
+    const {
+      physicalWidth,
+      virtualWidth,
+    } = this.state;
+
+    const isNoData = physicalWidth === 0 && virtualWidth === 0;
+
+    return <div className="yr-overbooking" id="yr-overbooking">
+      {isNoData && <div className="no-data">未获取到超售信息</div>}
+      {!isNoData && this.renderOverbooking()}
+    </div>;
+  }
+
+  renderOverbooking() {
     const {
       physicalTotal,
       physicalUsed,
@@ -142,11 +155,11 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
       physicalWidth,
       virtualWidth,
       overbooking,
-      unit
+      unit,
     } = this.state;
 
-
     let minWidth = Math.min(physicalWidth, virtualWidth);
+
     let triangleType = 'top';
     let triangleWidth = 0;
     let degree = 0;
@@ -157,49 +170,54 @@ export default class Overbooking extends React.Component<OverbookingProps, Overb
       triangleType = physicalWidth > virtualWidth ? 'bottom' : 'top';
     }
 
-    if (minWidth === 0) {
-      triangleWidth -= 4;
-      minWidth = 4;
-    }
-
     const pUsed = converter.humanConverter(physicalUsed, unit);
     const pTotal = converter.humanConverter(physicalTotal, unit);
     const vUsed = converter.humanConverter(virtualUsed, unit);
     const vTotal = converter.humanConverter(virtualTotal, unit);
 
-    const isNoData = physicalWidth === 0 && virtualWidth === 0;
+    if (minWidth === 0) {
+      triangleWidth -= 4;
+      minWidth = 4;
+    }
 
-    return <div className="yr-overbooking" id="yr-overbooking">
-      {isNoData && <div className="no-data">未获取到超售信息</div>}
-      {!isNoData && <span>
-                <Process processRef={(e: HTMLElement) => this.physicalEl = e}
-                         width={`${physicalWidth}px`}
-                         percent={physicalPercent}
-                         wordPosition="top">
-                    物理已使用容量/物理总容量：{pUsed.value + pUsed.units}/{pTotal.value + pTotal.units}
-                </Process>
-                <div className="area">
-                    <div className="rect-area" style={{width: `${minWidth}px`}}/>
-                    <div className={`triangle ${triangleType}`}>
-                        <div className="box line-box"
-                             style={{left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px`}}/>
-                        <div className="box blank-box"
-                             style={{left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px`}}/>
-                        <div className="box area-box"
-                             style={{left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px`}}/>
-                        <div className="text" style={this.getOverbookingStyle(degree, triangleWidth)}>
-                            超售比：{overbooking}
-                        </div>
-                    </div>
+    return <span>
+        <Process
+          processRef={(e: HTMLElement) => this.physicalEl = e}
+          width={`${physicalWidth}px`}
+          percent={physicalPercent}
+          wordPosition="top"
+        >
+            物理已使用容量/物理总容量：{pUsed.value + pUsed.units}/{pTotal.value + pTotal.units}
+        </Process>
+        <div className="area">
+            <div className="rect-area" style={{ width: `${minWidth}px` }} />
+            <div className={`triangle ${triangleType}`}>
+                <div
+                  className="box line-box"
+                  style={{ left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px` }}
+                />
+                <div
+                  className="box blank-box"
+                  style={{ left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px` }}
+                />
+                <div
+                  className="box area-box"
+                  style={{ left: `${minWidth}px`, borderRightWidth: `${triangleWidth}px` }}
+                />
+                <div className="text" style={this.getOverbookingStyle(degree, triangleWidth)}>
+                    超售比：{overbooking}
                 </div>
+            </div>
+        </div>
 
-                <Process processRef={(e: HTMLElement) => this.virtualEl = e}
-                         width={`${virtualWidth}px`}
-                         percent={virtualPercent}
-                         wordPosition="bottom">
-                    已分配容量/可分配总容量：{vUsed.value + vUsed.units}/{vTotal.value + vTotal.units}
-                </Process>
-            </span>}
-    </div>
+        <Process
+          processRef={(e: HTMLElement) => this.virtualEl = e}
+          width={`${virtualWidth}px`}
+          percent={virtualPercent}
+          wordPosition="bottom"
+        >
+            已分配容量/可分配总容量：{vUsed.value + vUsed.units}/{vTotal.value + vTotal.units}
+        </Process>
+    </span>;
   }
 }

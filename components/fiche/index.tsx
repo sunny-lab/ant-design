@@ -24,6 +24,6 @@ export default class Card extends React.Component<FicheProps> {
         {this.props.children}
       </div>
       {bottom}
-    </div>
+    </div>;
   }
 }
