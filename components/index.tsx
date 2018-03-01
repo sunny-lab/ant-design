@@ -126,3 +126,5 @@ export { default as GMenu } from './gmenu';
 export { default as Overbooking } from './overbooking';
 
 export { default as Fiche } from './fiche';
+
+export { default as Indicator } from './indicator';

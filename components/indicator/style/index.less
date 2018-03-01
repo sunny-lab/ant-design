@@ -1,0 +1,68 @@
+@import "../../style/themes/default";
+
+.ant-indicator {
+  padding: 4px;
+
+  &-item {
+    background-color: @indicator-normal-color;
+    border: 1px solid @indicator-normal-border;
+    border-radius: @indicator-border-radius;
+
+    &-success {
+      background-color: @indicator-success-color;
+      border: 1px solid @indicator-success-border;
+    }
+
+    &-exception {
+      background-color: @indicator-exception-color;
+      border: 1px solid @indicator-exception-border;
+    }
+
+    &-active {
+      background-color: @indicator-active-color;
+      border: 1px solid @indicator-active-border;
+    }
+  }
+
+  &-horizontal {
+    .ant-indicator-item {
+      float: right;
+      margin-right: 4px;
+    }
+  }
+
+  &-vertical {
+    .ant-indicator-item {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+
+  &-square {
+    .ant-indicator-item {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &-rect {
+    .ant-indicator-item {
+      width: 20px;
+      height: 6px;
+    }
+  }
+
+  &-circle {
+    .ant-indicator-item {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+    }
+  }
+
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
