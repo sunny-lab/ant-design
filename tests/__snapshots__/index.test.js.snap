@@ -56,5 +56,11 @@ Array [
   "Mention",
   "Upload",
   "version",
+  "GMenu",
+  "Overbooking",
+  "Fiche",
+  "Indicator",
+  "Toolbar",
+  "Panel",
 ]
 `;

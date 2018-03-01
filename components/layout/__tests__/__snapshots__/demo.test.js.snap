@@ -982,7 +982,7 @@ exports[`renders ./components/layout/demo/top.md correctly 1`] = `
       aria-activedescendant=""
       class="ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
       role="menu"
-      style="line-height:64px"
+      style="line-height:48px"
       tabindex="0"
     >
       <li
@@ -1010,11 +1010,10 @@ exports[`renders ./components/layout/demo/top.md correctly 1`] = `
   </div>
   <div
     class="ant-layout-content"
-    style="padding:0 50px"
   >
     <div
       class="ant-breadcrumb"
-      style="margin:16px 0"
+      style="margin:16px 0;padding:0 20px"
     >
       <span>
         <span
@@ -1054,7 +1053,7 @@ exports[`renders ./components/layout/demo/top.md correctly 1`] = `
       </span>
     </div>
     <div
-      style="background:#fff;padding:24px;min-height:280px"
+      style="background:#fff;padding:20px;min-height:280px"
     >
       Content
     </div>
@@ -1082,7 +1081,7 @@ exports[`renders ./components/layout/demo/top-side.md correctly 1`] = `
       aria-activedescendant=""
       class="ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
       role="menu"
-      style="line-height:64px"
+      style="line-height:48px"
       tabindex="0"
     >
       <li
@@ -1307,7 +1306,7 @@ exports[`renders ./components/layout/demo/top-side-2.md correctly 1`] = `
       aria-activedescendant=""
       class="ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
       role="menu"
-      style="line-height:64px"
+      style="line-height:48px"
       tabindex="0"
     >
       <li

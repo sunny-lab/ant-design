@@ -1,9 +1,9 @@
 {
-  "name": "antd",
-  "version": "3.2.2",
-  "title": "Ant Design",
-  "description": "An enterprise-class UI design language and React-based implementation",
-  "homepage": "http://ant.design/",
+  "name": "@sunny-lab/antd",
+  "version": "0.1.0",
+  "title": "Sunny Lab Ant Design",
+  "description": "An ant-design version from sunny-lab",
+  "homepage": "https://github.com/sunny-lab/ant-design",
   "keywords": [
     "ant",
     "design",
@@ -13,17 +13,19 @@
     "components",
     "ui",
     "framework",
-    "frontend"
+    "frontend",
+    "sunny-lab"
   ],
   "contributors": [
-    "ant"
+    "ant",
+    "sunny-lab"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
+    "url": "https://github.com/sunny-lab/ant-design"
   },
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design/issues"
+    "url": "https://github.com/sunny-lab/ant-design/issues"
   },
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -39,6 +41,7 @@
     "react-dom": ">=16.0.0"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^17.2.0",
     "@types/lodash.get": "^4.4.3",
     "array-tree-filter": "^2.0.0",
     "babel-runtime": "6.x",
