@@ -572,6 +572,119 @@ exports[`renders ./components/layout/demo/fixed-sider.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders ./components/layout/demo/nest.md correctly 1`] = `
+<div
+  class="layout ant-layout"
+>
+  <div
+    class="ant-layout-header"
+  >
+    <div
+      class="header-left"
+    >
+      <ul
+        aria-activedescendant=""
+        class="ant-menu ant-menu-dark ant-menu-root ant-menu-horizontal"
+        role="menu"
+        style="line-height:48px"
+        tabindex="0"
+      >
+        <li
+          aria-selected="false"
+          class="ant-menu-item"
+          role="menuitem"
+        >
+          nav 1
+        </li>
+        <li
+          aria-selected="true"
+          class="ant-menu-item ant-menu-item-selected"
+          role="menuitem"
+        >
+          nav 2
+        </li>
+        <li
+          aria-selected="false"
+          class="ant-menu-item"
+          role="menuitem"
+        >
+          nav 3
+        </li>
+      </ul>
+    </div>
+    <div
+      class="header-center"
+    >
+      <span
+        style="color:rgba(255, 255, 255, 0.65)"
+      >
+        Logo
+      </span>
+    </div>
+    <div
+      class="header-right"
+    >
+      <span
+        style="color:rgba(255, 255, 255, 0.65)"
+      >
+        Admin
+      </span>
+    </div>
+  </div>
+  <div
+    class="ant-layout"
+  >
+    <div
+      class="ant-layout-sub-header ant-layout-header"
+    >
+      <span
+        class="header-back"
+      >
+        <i
+          class="anticon anticon-verticle-right"
+        />
+      </span>
+      <h3
+        class="header-title"
+      >
+        Sub header
+      </h3>
+      <div
+        class="header-right"
+      >
+        Sub header content.
+      </div>
+    </div>
+    <div
+      class="ant-layout"
+      style="height:300px"
+    >
+      <div
+        class="ant-layout-sider"
+        style="flex:0 0 200px;max-width:200px;min-width:200px;width:200px"
+      >
+        <div
+          class="ant-layout-sider-children"
+        >
+          Sider
+        </div>
+      </div>
+      <div
+        class="ant-layout-content"
+      >
+        Content
+      </div>
+    </div>
+  </div>
+  <div
+    class="ant-layout-footer"
+    style="text-align:center"
+  >
+    Ant Design ©2016 Created by Ant UED
+  </div>
+</div>
+`;
+
 exports[`renders ./components/layout/demo/responsive.md correctly 1`] = `
 <div
   class="ant-layout"
