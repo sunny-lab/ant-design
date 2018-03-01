@@ -1,7 +1,7 @@
 ---
 category: Components
 subtitle: 工具条
-type: Data Display
+type: Layout
 title: Toolbar
 ---
 

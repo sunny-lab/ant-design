@@ -130,3 +130,5 @@ export { default as Fiche } from './fiche';
 export { default as Indicator } from './indicator';
 
 export { default as Toolbar } from './toolbar';
+
+export { default as Panel } from './panel';
