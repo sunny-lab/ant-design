@@ -15,6 +15,7 @@ subtitle: 面板
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| id | 唯一标识 | string | |
 | title | 标题 | string\|ReactNode | |
 | description | 描述 | string\|ReactNode | |
 | bordered | 是否显示边框 | boolean | true |

@@ -1,6 +1,7 @@
 @import "../../style/themes/default";
 
 .ant-panel {
+  position: relative;
 
   &-bordered {
     border: 1px solid @panel-border-color;
@@ -19,5 +20,14 @@
 
   &-content {
     padding: 0 20px 20px 20px;
+  }
+
+  .close-btn {
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
   }
 }

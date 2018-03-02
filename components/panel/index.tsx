@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import { scrollToTarget } from './scroller';
+import Icon from '../icon';
 
 export interface PanelProps {
   scrollEl: HTMLElement;
@@ -12,6 +13,9 @@ export interface PanelProps {
   time: number;
   bordered: boolean;
   bodyStyle: object;
+  closable: boolean;
+  id: string;
+  onClose: () => {};
 }
 
 export default class Panel extends React.Component<PanelProps> {
@@ -19,13 +23,20 @@ export default class Panel extends React.Component<PanelProps> {
     prefixCls: 'ant-panel',
     time: 500,
     bordered: true,
+    closable: false,
   };
 
   private targetEl: HTMLElement | null;
 
   componentDidMount() {
-    if (this.props.scrollEl) {
+    if (this.props.scrollEl && this.targetEl) {
       scrollToTarget(this.props.scrollEl, this.targetEl, this.props.time);
+    }
+  }
+
+  componentWillReceiveProps(props: PanelProps) {
+    if (this.props.id !== props.id && this.props.scrollEl && this.targetEl) {
+      scrollToTarget(props.scrollEl, this.targetEl, props.time);
     }
   }
 
@@ -37,7 +48,8 @@ export default class Panel extends React.Component<PanelProps> {
     return <div className={className} ref={el => this.targetEl = el}>
       {props.title && <div className={`${props.prefixCls}-title`}>{props.title}</div>}
       {props.description && <div className={`${props.prefixCls}-description`}>描述：{props.description}</div>}
-      <div className={`${props.prefixCls}-content`}>{this.props.children}</div>
+      {props.closable && <span onClick={this.props.onClose}><Icon className="close-btn" type="close"/></span>}
+      <div className={`${props.prefixCls}-content`} style={props.bodyStyle}>{this.props.children}</div>
     </div>;
   }
 }
