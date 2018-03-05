@@ -292,6 +292,34 @@ exports[`renders ./components/tabs/demo/card-top.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders ./components/tabs/demo/custom.md correctly 1`] = `
+<div>
+  <div
+    class="ant-tab-custom-tab"
+  >
+    <a>
+      选项1
+    </a>
+  </div>
+  <div
+    class="ant-tab-custom-tab"
+  >
+    <a
+      class="active"
+    >
+      选项2
+    </a>
+  </div>
+  <div
+    class="ant-tab-custom-tab"
+  >
+    <a>
+      选项3
+    </a>
+  </div>
+</div>
+`;
+
 exports[`renders ./components/tabs/demo/custom-add-trigger.md correctly 1`] = `
 <div>
   <div
