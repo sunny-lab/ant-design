@@ -13,6 +13,7 @@ export interface PanelProps {
   time: number;
   bordered: boolean;
   bodyStyle: object;
+  style: object;
   closable: boolean;
   id: string;
   onClose: () => {};
@@ -45,7 +46,7 @@ export default class Panel extends React.Component<PanelProps> {
     const className = classNames(props.className, props.prefixCls, {
       [`${props.prefixCls}-bordered`]: props.bordered,
     });
-    return <div className={className} ref={el => this.targetEl = el}>
+    return <div className={className} ref={el => this.targetEl = el} style={props.style}>
       {props.title && <div className={`${props.prefixCls}-title`}>{props.title}</div>}
       {props.description && <div className={`${props.prefixCls}-description`}>描述：{props.description}</div>}
       {props.closable && <span onClick={this.props.onClose}><Icon className="close-btn" type="close"/></span>}

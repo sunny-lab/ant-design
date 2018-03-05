@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import RcTabs, { TabPane } from 'rc-tabs';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 import TabContent from 'rc-tabs/lib/TabContent';
+import CustomTab from './custom';
 import classNames from 'classnames';
 import Icon from '../icon';
 import warning from '../_util/warning';
@@ -45,6 +46,7 @@ export interface TabPaneProps {
 
 export default class Tabs extends React.Component<TabsProps, any> {
   static TabPane = TabPane as React.ClassicComponentClass<TabPaneProps>;
+  static Custom = CustomTab;
 
   static defaultProps = {
     prefixCls: 'ant-tabs',
