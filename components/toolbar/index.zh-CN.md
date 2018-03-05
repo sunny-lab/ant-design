@@ -16,3 +16,4 @@ title: Toolbar
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | title | 工具栏标题 | string | |
+| position | 居左或者居右 可选：left right | right |
