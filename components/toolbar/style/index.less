@@ -5,15 +5,27 @@
   position: relative;
   padding: 10px 0;
 
+  &-left {
+    text-align: left;
+
+    button, a, .ant-select {
+      margin-right: 10px;
+    }
+  }
+
+  &-right {
+    text-align: right;
+
+    button, a, .ant-select {
+      margin-left: 10px;
+    }
+  }
+
   &-title {
     position: absolute;
     font-size: 14px;
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
-  }
-
-  button, a, .ant-select {
-    margin-left: 10px;
   }
 }

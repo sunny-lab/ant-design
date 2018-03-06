@@ -17,11 +17,13 @@ export default class Toolbar extends React.Component<ToolbarProps> {
 
   render() {
     const { props } = this;
+
+    const className = classNames(props.className, props.prefixCls, {
+      [`${props.prefixCls}-left`]: props.position === 'left',
+      [`${props.prefixCls}-right`]: props.position === 'right',
+    });
     return (
-      <div
-        className={classNames(props.className, props.prefixCls)}
-        style={{ ...props.style, textAlign: props.position }}
-      >
+      <div className={className} style={props.style}>
         <div className={`${props.prefixCls}-title`}>{props.title}</div>
         {props.children}
       </div>
