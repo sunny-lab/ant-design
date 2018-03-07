@@ -107,7 +107,7 @@ class SubHeader extends React.Component<SubHeaderProps> {
     const onBack = this.props.onBack;
 
     return <Header className="ant-layout-sub-header">
-      {onBack && <span className="header-back"><Icon type="verticle-right"/></span>}
+      {onBack && <span className="header-back" onClick={onBack}><Icon type="verticle-right"/></span>}
       <h3 className="header-title">{this.props.title}</h3>
       <div className="header-right">
         {this.props.children}
