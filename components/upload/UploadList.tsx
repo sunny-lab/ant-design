@@ -5,6 +5,7 @@ import Tooltip from '../tooltip';
 import Progress from '../progress';
 import classNames from 'classnames';
 import { UploadListProps, UploadFile } from './interface';
+import { CSSProperties } from 'react';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 const previewFile = (file: File, callback: Function) => {
@@ -131,7 +132,7 @@ export default class UploadList extends React.Component<UploadListProps, any> {
       const style = (file.url || file.thumbUrl) ? undefined : {
         pointerEvents: 'none',
         opacity: 0.5,
-      };
+      } as CSSProperties;
       const previewIcon = showPreviewIcon ? (
         <a
           href={file.url || file.thumbUrl}

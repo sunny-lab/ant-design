@@ -55,7 +55,7 @@ export default class Avatar extends React.Component<AvatarProps, AvatarState> {
     const childrenNode = this.avatarChildren;
     if (childrenNode) {
       const childrenWidth = childrenNode.offsetWidth;
-      const avatarWidth = ReactDOM.findDOMNode(this).getBoundingClientRect().width;
+      const avatarWidth = (ReactDOM.findDOMNode(this) as HTMLElement).getBoundingClientRect().width;
       // add 4px gap for each side to get better performance
       if (avatarWidth - 8 < childrenWidth) {
         this.setState({

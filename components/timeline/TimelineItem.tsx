@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { CSSProperties } from 'react';
 
 export interface TimeLineItemProps {
   prefixCls?: string;
@@ -34,12 +35,14 @@ export default class TimelineItem extends React.Component<TimeLineItemProps, any
       [`${prefixCls}-item-head-${color}`]: true,
     });
 
+    const styles = { borderColor: /blue|red|green/.test(color) ? null : color } as CSSProperties;
+
     return (
       <li {...restProps} className={itemClassName}>
         <div className={`${prefixCls}-item-tail`} />
         <div
           className={dotClassName}
-          style={{ borderColor: /blue|red|green/.test(color) ? null : color }}
+          style={styles}
         >
           {dot}
         </div>

@@ -236,7 +236,7 @@ export default class FormItem extends React.Component<FormItemProps, any> {
       if (typeof label === 'string') {
         e.preventDefault();
       }
-      const control = ReactDOM.findDOMNode(this).querySelector(`[id="${id}"]`) as HTMLElement;
+      const control = (ReactDOM.findDOMNode(this) as HTMLElement).querySelector(`[id="${id}"]`) as HTMLElement;
       if (control && control.focus) {
         control.focus();
       }

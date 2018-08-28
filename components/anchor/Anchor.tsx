@@ -199,7 +199,8 @@ export default class Anchor extends React.Component<AnchorProps, any> {
       return;
     }
     const { prefixCls } = this.props;
-    const linkNode = ReactDOM.findDOMNode(this as any).getElementsByClassName(`${prefixCls}-link-title-active`)[0];
+    const linkNode = (ReactDOM.findDOMNode(this as any) as HTMLElement)
+      .getElementsByClassName(`${prefixCls}-link-title-active`)[0];
     if (linkNode) {
       this.inkNode.style.top = `${(linkNode as any).offsetTop + linkNode.clientHeight / 2 - 4.5}px`;
     }
